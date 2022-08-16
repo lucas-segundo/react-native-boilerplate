@@ -11,6 +11,7 @@ describe('Example', () => {
     const info = element(
       by.text('Open up App.js to start working on your app!!')
     )
+    await device.takeScreenshot('home-test')
     await expect(info).toBeVisible()
   })
 })
