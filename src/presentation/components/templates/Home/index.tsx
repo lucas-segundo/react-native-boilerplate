@@ -1,10 +1,10 @@
 import React from 'react'
 import { Box, Button } from 'native-base'
 import { StackNavigationProps } from '../../../../App'
+import { useNavigation } from '@react-navigation/native'
 
-export type HomeProps = StackNavigationProps
-
-const Home = ({ navigation }: HomeProps) => {
+const Home = () => {
+  const navigation = useNavigation<StackNavigationProps>()
   return (
     <Box safeArea>
       <Box

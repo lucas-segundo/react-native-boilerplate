@@ -3,17 +3,17 @@ import { NativeBaseProvider } from 'native-base'
 import { NavigationContainer } from '@react-navigation/native'
 import {
   createNativeStackNavigator,
-  NativeStackScreenProps,
+  NativeStackNavigationProp,
 } from '@react-navigation/native-stack'
 import Home from './presentation/components/templates/Home'
 import Details from './presentation/components/templates/Details'
 
-type RootStackParamList = {
+export type RootStackParamList = {
   Home: undefined
   Details: undefined
 }
 
-export type StackNavigationProps = NativeStackScreenProps<RootStackParamList>
+export type StackNavigationProps = NativeStackNavigationProp<RootStackParamList>
 
 const Stack = createNativeStackNavigator<RootStackParamList>()
 

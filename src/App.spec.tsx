@@ -15,6 +15,6 @@ describe('App', () => {
       </NativeBaseProvider>
     )
 
-    expect(screen.getAllByText('This is a Box').length).toBe(1)
+    expect(screen.getByText('This is a Box')).toBeTruthy()
   })
 })
