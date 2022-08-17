@@ -1,23 +1,31 @@
 import React from 'react'
-import { NativeBaseProvider, Box } from 'native-base'
+import { NativeBaseProvider } from 'native-base'
+import { NavigationContainer } from '@react-navigation/native'
+import {
+  createNativeStackNavigator,
+  NativeStackScreenProps,
+} from '@react-navigation/native-stack'
+import Home from './presentation/components/templates/Home'
+import Details from './presentation/components/templates/Details'
+
+type RootStackParamList = {
+  Home: undefined
+  Details: undefined
+}
+
+export type StackNavigationProps = NativeStackScreenProps<RootStackParamList>
+
+const Stack = createNativeStackNavigator<RootStackParamList>()
 
 export default function App() {
   return (
     <NativeBaseProvider>
-      <Box safeArea>
-        <Box
-          alignSelf="center"
-          bg="primary.500"
-          _text={{
-            fontSize: 'md',
-            fontWeight: 'medium',
-            color: 'warmGray.50',
-            letterSpacing: 'lg',
-          }}
-        >
-          This is a Box
-        </Box>
-      </Box>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Details" component={Details} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </NativeBaseProvider>
   )
 }
