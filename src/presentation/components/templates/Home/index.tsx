@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Button } from 'native-base'
-import { StackNavigationProps } from '../../../../App'
 import { useNavigation } from '@react-navigation/native'
+import { StackNavigationProps } from 'App'
 
 const Home = () => {
   const navigation = useNavigation<StackNavigationProps>()

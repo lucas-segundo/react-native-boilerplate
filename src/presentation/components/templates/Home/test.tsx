@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react-native'
+import { renderWithProviders } from 'presentation/helpers/render-with-providers'
 import Home from '.'
-import { renderWithProviders } from '../../../helpers/render-with-providers'
 
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper')
 
