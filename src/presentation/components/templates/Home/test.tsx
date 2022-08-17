@@ -1,23 +1,11 @@
-import { NavigationContainer } from '@react-navigation/native'
-import { render, screen } from '@testing-library/react-native'
-import { NativeBaseProvider } from 'native-base'
+import { screen } from '@testing-library/react-native'
 import Home from '.'
+import { renderWithProviders } from '../../../helpers/render-with-providers'
 
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper')
 
-const inset = {
-  frame: { x: 0, y: 0, width: 0, height: 0 },
-  insets: { top: 0, left: 0, right: 0, bottom: 0 },
-}
-
 const makeSut = () => {
-  render(
-    <NativeBaseProvider initialWindowMetrics={inset}>
-      <NavigationContainer>
-        <Home />
-      </NavigationContainer>
-    </NativeBaseProvider>
-  )
+  renderWithProviders(<Home />)
 }
 
 describe('Home', () => {
